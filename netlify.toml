@@ -1,0 +1,8 @@
+[build]
+base = "frontend"
+command = "node build.js"
+publish = "dist"
+
+[build.environment]
+NODE_VERSION = "20"
+API_URL = "https://emaiil.onrender.com/api/index.php"

@@ -1,0 +1,4 @@
+**/.env
+**/node_modules/
+database.sql
+setup_test_users.php

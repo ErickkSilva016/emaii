@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: emaii-api
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: Dockerfile
+    dockerContext: .
+    plan: 0.5c-512mb
+    disk:
+      name: emaii-php-sessions
+      mountPath: /var/lib/php/sessions
+      sizeGB: 1
+    envVars:
+      - key: EMAII_DB_HOST
+        sync: false
+      - key: EMAII_DB_PORT
+        value: "3306"
+      - key: EMAII_DB_NAME
+        sync: false
+      - key: EMAII_DB_USER
+        sync: false
+      - key: EMAII_DB_PASS
+        sync: false
+      - key: EMAII_FRONTEND_ORIGIN
+        sync: false
+      - key: EMAII_SESSION_SAMESITE
+        value: None
+      - key: PORT
+        value: "10000"
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.5-flash-lite
